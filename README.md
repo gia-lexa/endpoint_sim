@@ -4,9 +4,7 @@
 A detailed description can be found in this [one-page project document](https://docs.google.com/document/d/1rl_HBwIVZLIfOR3-tDTJrC_GLMa68sBgaU4Z0cLMaYo/edit?usp=sharing).  
 
 ## Summary
-This is a Rails API framework which allows you to simulate endpoint activity. This includes process starts, file operations, and network transmissions, with each action being logged in a machine-readable format. A LogsController also allows you to fetch and filter that data.
- 
-This data is designed to serve as baseline telemetry data, built to compare with the output of an EDR agent in order to ensure that agent's consistent performance.
+EndpointSim is a test harness framework, designed to simulate endpoint activity across macOS and Linux platforms. It enables users to generate various telemetry data such as process starts, file management, and network transmissions. This data can then be used to validate EDR agent performance.
 
 ## Prerequisites
 - Ruby 3.1.2 or higher
