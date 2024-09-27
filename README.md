@@ -5,13 +5,6 @@
  
  This data is designed to help correlate these endpoint logs with the telemetry recorded by an EDR agent in order to ensure that agent's consistent performance.
 
-The central actions of the app take place in its controllers, which are capable of working across Linux and macOS platforms.
-
-- ProcessesController: Starts processes with executable files and command-line arguments.
-- FilesController: Creates, modifies, and deletes files.
-- NetworkController: Simulates network connections and data transmissions.
-- LogsController: Fetches and optionally filters logs.
-
 ## Prerequisites
 - Ruby 3.1.2 or higher
 - Rails 7.1.0 or higher
