@@ -1,9 +1,11 @@
 # EndpointSim
 
 ## Description
- This is a Rails API framework which allows you to simulate endpoint activity including process starts, file operations, and network activity. Each action is logged in a machine-readable format. This data is designed to help correlate these endpoint logs with the telemetry recorded by an EDR agent in order to ensure that agent's consistent performance.
+ This is a Rails API framework which allows you to simulate endpoint activity including process starts, file operations, and network transmissions, with each action being logged in a machine-readable format. 
+ 
+ This data is designed to help correlate these endpoint logs with the telemetry recorded by an EDR agent in order to ensure that agent's consistent performance.
 
-The central actions take place in the app's controllers, which are capable of working in Linux and macOS platforms.
+The central actions of the app take place in its controllers, which are capable of working across Linux and macOS platforms.
 
 - ProcessesController: Starts processes with executable files and command-line arguments.
 - FilesController: Creates, modifies, and deletes files.
@@ -53,4 +55,9 @@ curl -X POST http://localhost:3000/api/v1/processes \
 -d '{"executable": "/bin/ls", "args": ["Hello World"]}'
 ```
              
-
+## Simulate Network Activity
+```
+curl -X POST http://localhost:3000/api/v1/network \
+-H "Content-Type: application/json" \
+-d '{"destination": "8.8.8.8", "port": 80, "data": "Test message"}'
+```
