@@ -59,5 +59,5 @@ curl -X POST http://localhost:3000/api/v1/processes \
 ```
 curl -X POST http://localhost:3000/api/v1/network \
 -H "Content-Type: application/json" \
--d '{"destination": "8.8.8.8", "port": 80, "data": "Test message"}'
+-d '{"destination_address": "localhost", "destination_port": 3000, "data": "Greetings, Professor Falken."}'
 ```
