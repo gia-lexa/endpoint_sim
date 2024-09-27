@@ -34,23 +34,23 @@ Run a single test:
 Run the test suite:
 `bundle exec rspec`
 
-### Simulation Examples
+## Simulation Examples
 
-## Create a File
+### Create a File
 ```
 curl -X POST http://localhost:3000/api/v1/files \
 -H "Content-Type: application/json" \
 -d '{"file_path": "/tmp/test_file.txt", "content": "test file data"}'
 ```
 
-## Start a Process (with a macOS executable)
+### Start a Process (with a macOS executable)
 ```
 curl -X POST http://localhost:3000/api/v1/processes \
 -H "Content-Type: application/json" \
 -d '{"executable": "/bin/ls", "args": ["Hello World"]}'
 ```
              
-## Simulate Network Activity
+### Send Network Transmission
 ```
 curl -X POST http://localhost:3000/api/v1/network \
 -H "Content-Type: application/json" \
