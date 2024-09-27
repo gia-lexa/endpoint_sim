@@ -1,52 +1,42 @@
-# README
+# EndpointSim
 
-This is a test harness, which allows you to simulate the following—process starts, file operations, and network activity, logging each action with detailed telemetry data, and exporting the logs to a machine-friendly JSON format. It’s designed to help correlate these activities with the telemetry recorded by an EDR agent.
+## Description
+This is a test harness for telemetry data. This is a Rails API framework which allows you to simulate process starts, file operations, and network activity, logging each action in a machine-readable format. It’s designed to help correlate these endpoint logs with the telemetry recorded by an EDR agent.
 
-There are three main controllers which are responsible for
-triggering the relevant activity and logging the corresponding telemetry data.
+The central actions take place in the app's controllers, which can work across Linux and macOS platforms.
 
-ProcessesController: Starts processes with executable files and command-line arguments.
-FilesController: Creates, modifies, and deletes files.
-NetworkController: Simulates network connections and data transmissions.
+-ProcessesController: Starts processes with executable files and command-line arguments.
+-FilesController: Creates, modifies, and deletes files.
+-NetworkController: Simulates network connections and data transmissions.
+-LogsController: Fetches and optionally filters the logs.
+
+## Prerequisites
+- Ruby 3.1.2 or higher
+- Rails 7.1.0 or higher
+- Bundler gem
+
+## Installation
+```bash
+git clone https://github.com/gia-lexa/endpoint_sim.git
+cd endpoint_sim
+bundle install
+```
+
+## Running the Framework
+
+Start the rails server:
+`rails server`
+
+Access the API at http://localhost:3000
+
+# Testing
+
+Each controller includes a spec file, which uses RSpec to test its behavior in a broader context, including validatng the full HTTP response cycle.
+
+Run a single test:
+`bundle exec rspec <path/to/spec_file.rb>`
+
+Run the test suite:
+`bundle exec rspec`
 
 
-The fourth controller, LogsController, reads logs from the created files and formats the output.
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-
-Network Controller
-* Establishes network connections, sends data, logs activity
-
-Testing Network Controller
-* Simulate a destination server like netcat (nc), which can listen for TCP connections on a specific port and print out any data it receives.
-    ** Whether Linux or MacOS, run this in a separate terminal tab: nc -l 443
-    ** In its own terminal tab, fire up the Rails server: rails server
-    ** In a third Terminal tab, run: 
-        curl -X POST "http://localhost:3000/api/v1/network/connect" \
-        -d "destination_address=127.0.0.1" \
-        -d "destination_port=443" \
-        -d "data=Greetings, Professor Falken."
-
-    ** The netcat tab should surface:
-    Hello from Rails API
-
-    ** The Curl tab should respond with: {"status":"Data sent","bytes_sent":<integer>}
-
-    ** Inspect the logs: cat log/activity_log.json
-* ...
