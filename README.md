@@ -24,7 +24,7 @@ Start the rails server:
 
 Access the API at http://localhost:3000
 
-## Testing
+## Tests
 
 Each controller includes a spec file, which uses RSpec to test its behavior in a broader context, including validatng the full HTTP response cycle.
 
@@ -33,6 +33,8 @@ Run a single test:
 
 Run the test suite:
 `bundle exec rspec`
+
+### Simulation Examples
 
 ## Create a File
 ```
