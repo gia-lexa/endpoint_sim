@@ -1,10 +1,10 @@
 # EndpointSim
 
-## Description
-A detailed description can be found in this [one-page project document](https://docs.google.com/document/d/1rl_HBwIVZLIfOR3-tDTJrC_GLMa68sBgaU4Z0cLMaYo/edit?usp=sharing).  
-
 ## Summary
 EndpointSim is a test harness framework, designed to simulate endpoint activity across macOS and Linux platforms. It enables users to generate various telemetry data such as process starts, file management, and network transmissions. This data can then be used to validate EDR agent performance.
+
+## What I've Built and How It Works
+A detailed description can be found in this repo's [Project_Details.md](https://github.com/gia-lexa/endpoint_sim/blob/main/Project_Details.md).  
 
 ## Prerequisites
 - Ruby 3.1.2 or higher
