@@ -1,16 +1,10 @@
 # EndpointSim
 
 ## Description
- This is a Rails API framework which allows you to simulate endpoint activity including process starts, file operations, and network transmissions, with each action being logged in a machine-readable format. 
- 
- This data is designed to help correlate these endpoint logs with the telemetry recorded by an EDR agent in order to ensure that agent's consistent performance.
+A detailed description can be found in this [one-page project document](https://docs.google.com/document/d/1rl_HBwIVZLIfOR3-tDTJrC_GLMa68sBgaU4Z0cLMaYo/edit?usp=sharing).  
 
-The central actions of the app take place in its controllers, which are capable of working across Linux and macOS platforms.
-
-- ProcessesController: Starts processes with executable files and command-line arguments.
-- FilesController: Creates, modifies, and deletes files.
-- NetworkController: Simulates network connections and data transmissions.
-- LogsController: Fetches and optionally filters logs.
+## Summary
+EndpointSim is a test harness framework, designed to simulate endpoint activity across macOS and Linux platforms. It enables users to generate various telemetry data such as process starts, file management, and network transmissions. This data can then be used to validate EDR agent performance.
 
 ## Prerequisites
 - Ruby 3.1.2 or higher
@@ -31,7 +25,7 @@ Start the rails server:
 
 Access the API at http://localhost:3000
 
-## Testing
+## Tests
 
 Each controller includes a spec file, which uses RSpec to test its behavior in a broader context, including validatng the full HTTP response cycle.
 
@@ -41,21 +35,23 @@ Run a single test:
 Run the test suite:
 `bundle exec rspec`
 
-## Create a File
+## Simulation Examples
+
+### Create a File
 ```
 curl -X POST http://localhost:3000/api/v1/files \
 -H "Content-Type: application/json" \
 -d '{"file_path": "/tmp/test_file.txt", "content": "test file data"}'
 ```
 
-## Start a Process (with a macOS executable)
+### Start a Process (with a macOS executable)
 ```
 curl -X POST http://localhost:3000/api/v1/processes \
 -H "Content-Type: application/json" \
 -d '{"executable": "/bin/ls", "args": ["Hello World"]}'
 ```
              
-## Simulate Network Activity
+### Send Network Transmission
 ```
 curl -X POST http://localhost:3000/api/v1/network \
 -H "Content-Type: application/json" \
