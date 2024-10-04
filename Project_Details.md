@@ -4,22 +4,20 @@ EndpointSim is a test harness framework, designed to simulate endpoint activity 
 # How it Works
 
 ## Controllers
-The main actions of the framework are contained in four Rails controllers. Process, Files, and Network controllers log their activity in machine-readable json. 
+The main actions of the framework are contained in four Rails controllers. Process, Files, and Network controllers log their activity in machine-readable json. The Logs Controller extracts those logs, either filtered or en masse.
 
 ## ProcessController
-Given a path to an executable file and the desired command-line arguments, uses the Ruby method spawn to start a process.
-Can utilize executables from macOS or Linux.
+Given a path to an executable file and the desired command-line arguments, uses the Ruby method `spawn` to start a process.
+Can utilize executables from either macOS or Linux.
 
 ## FilesController
 Creates, modifies, and deletes a specified file, based on the file_path parameter provided in the API request.
 
 ## NetworkController
-Establishes a network connection, via a TCP connection, and transmits data
-Makes connection via TCPSocket which is platform-independent.
+Establishes a network connection, via TCP, and transmits data. That connection is made with TCPSocket which is platform-independent.
 
 ## LogsController 
-Programmatically retrieves and returns log entries
-Can filter by type
+Programmatically retrieves and returns log entries. Can filter by type.
 
 # Routing
 The application uses RESTful routing to map HTTP requests to controller actions. For example, a POST request to /api/v1/processes triggers the create action in the ProcessesController.
