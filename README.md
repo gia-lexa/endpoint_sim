@@ -1,4 +1,4 @@
-# EndpointSim — Another installment of Build One Thing a Week Practice
+# EndpointSim — just for fun
 
 ## Summary
 EndpointSim is a test harness framework, designed to simulate endpoint activity across macOS and Linux platforms. It enables users to generate various telemetry data such as process starts, file management, and network transmissions. This data can then be used to validate EDR agent performance.
