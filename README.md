@@ -1,4 +1,4 @@
-# EndpointSim — just for fun
+# EndpointSim
 
 ## Summary
 EndpointSim is a Rails API test harness framework, designed to simulate endpoint activity across macOS and Linux platforms. It enables users to generate various telemetry data such as process starts, file management, and network transmissions. This data can then be used to validate EDR agent performance.
