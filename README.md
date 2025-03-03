@@ -1,29 +1,8 @@
 # EndpointSim
 
 ## Summary
-EndpointSim is a Rails API test harness framework, designed to simulate endpoint activity across macOS and Linux platforms. It enables users to generate various telemetry data such as process starts, file management, and network transmissions. This data can then be used to validate EDR agent performance.
+EndpointSim is a Rails API test harness framework, designed to simulate endpoint activity across macOS and Linux platforms. It enables users to generate various telemetry data such as process starts, file management, and network transmissions. This data could ostensibly be used to validate EDR agent performance.
 
-## What I've Built and How It Works
-A detailed description can be found in this repo's [Project_Details.md](https://github.com/gia-lexa/endpoint_sim/blob/main/Project_Details.md).  
-
-## Prerequisites
-- Ruby 3.1.2 or higher
-- Rails 7.1.0 or higher
-- Bundler gem
-
-## Installation
-```bash
-git clone https://github.com/gia-lexa/endpoint_sim.git
-cd endpoint_sim
-bundle install
-```
-
-## Running the Framework
-
-Start the rails server:
-`rails server`
-
-Access the API at http://localhost:3000
 
 ## Tests
 
@@ -57,3 +36,7 @@ curl -X POST http://localhost:3000/api/v1/network \
 -H "Content-Type: application/json" \
 -d '{"destination_address": "localhost", "destination_port": 3000, "data": "Greetings, Professor Falken."}'
 ```
+
+Disclaimer
+This project is an in-progress technical demonstration of a personal use test harness. While provided under the MIT License, it is not optimized for production use, and no guarantees are made regarding security, reliability, or real-world performance. It serves as an exploration of best practices in test harness development.
+
